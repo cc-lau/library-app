@@ -1,14 +1,25 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+function Book(Title, Author, Pages, Read) {
+  this.Title = Title;
+  this.Author = Author;
+  this.Pages = Pages;
+  this.Read = Read;
 }
 
-function addBookToLibrary(title, author, pages, read) {
-  let book = new Book(title, author, pages, read);
+function addBookToLibrary(Title, Author, Pages, Read) {
+ /* const addBooksContainer = document.querySelector("add-books-container")
+  const addBookButton = document.querySelector("add-book");
+  addBookButton.addEventListener("click", function() {
+    const bookForm = document.createElement("form")
+    bookForm.classList.add("book-form")
+    bookForm.appendChild(addBooksContainer)
+    
+  })
+  
+  */
+  
+  let book = new Book(Title, Author, Pages, Read);
   myLibrary.push(book);
 }
 
@@ -25,17 +36,65 @@ function displayBooks() {
         para.textContent = (`${key}: ${myLibrary[key]}`);
         card.appendChild(para);
       }
-
     })
 }
 
+addBookToLibrary("aaaaaaaaaaaaaaa", "bccccccccccc", "c", "dffffffffffffffffffff")
 addBookToLibrary("a", "b", "c", "d")
 addBookToLibrary("a", "b", "c", "d")
 addBookToLibrary("a", "b", "c", "d")
-addBookToLibrary("a", "b", "c", "d")
+addBookToLibrary("aaaaaaaaaaaaaaa", "bccccccccccc", "c", "dffffffffffffffffffff")
 addBookToLibrary("a", "b", "c", "d")
 
 displayBooks()
+
+
+
+
+
+function myFunction() {
+  let x = document.getElementById("test");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
