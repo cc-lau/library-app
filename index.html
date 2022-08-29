@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="main.js" defer></script>
     <title>Library App</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="header">
-        <h1>Library</h1>
+      <h1>Library</h1>
     </div>
-
     <div class="button-container">
-    <button type="button" class="add-book" onclick="myFunction()">+ Add New Book</button>
+      <button type="button" class="add-book">+ Add New Book</button>
     </div>
-
     <div class="form-popup">
-        <form action="add-book" class="add-book">
-            <label></label>
-
-
-
-
-        </form>
-
+        <div class="form-container">
+      <form action="add-book" method="post">
+        <div class="exit-container">
+        <button type="button" class="exit-button">x</button>        
+    </div>
+        <div>
+        <h1>Add New Book</h1>
 
     </div>
-
+        <div>
+          <label for="Title"><b>Title:</b></label>
+          <input type="text" name="Title" id="Title">
+        </div>
+        <div>
+          <label for="Author"><b>Author:</b> </label>
+          <input type="text" name="Author" id="Author">
+        </div>
+        <div>
+          <label for="Pages"><b>Pages:</b></label>
+          <input type="number" name="Pages" id="Pages">
+        </div>
+        <div>
+          <label for="Read"><b>Read:</b> </label>
+          <input type="checkbox" name="Read" class="read-box" id="Read">
+        </div>
+        <div class="submit-container">
+            <input type="submit" value="Submit" class="submit-button">  
+        </div>
+      </form>
+    </div>
+</div>
     <div class="bookshelf-container">
-    <div class="bookshelf">
-
-    </div>
-
-
-
-
-</body>
+      <div class="bookshelf"></div>
+  </body>
 </html>

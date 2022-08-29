@@ -7,6 +7,22 @@ function Book(Title, Author, Pages, Read) {
   this.Read = Read;
 }
 
+document.querySelector(".exit-button").addEventListener("click", function (){
+  document.querySelector(".form-popup").style.display = "none";
+})
+
+document.querySelector(".add-book").addEventListener("click", function (){
+  document.querySelector(".form-popup").style.display = "flex";
+})
+
+
+function formData() {
+  let Title = document.getElementById("Title").value;
+  let Author = document.getElementById("Author").value;
+  let Pages = document.getElementById("Pages").value;
+  let Read = document.getElementById("Read").value;
+}
+
 function addBookToLibrary(Title, Author, Pages, Read) {
  /* const addBooksContainer = document.querySelector("add-books-container")
   const addBookButton = document.querySelector("add-book");
@@ -50,16 +66,6 @@ displayBooks()
 
 
 
-
-
-function myFunction() {
-  let x = document.getElementById("test");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
 
 
 
