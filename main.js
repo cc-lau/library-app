@@ -1,42 +1,42 @@
 let myLibrary = [];
 
-function Book(Title, Author, Pages, Read) {
-  this.Title = Title;
-  this.Author = Author;
-  this.Pages = Pages;
-  this.Read = Read;
+class Book {
+  constructor(Title, Author, Pages, Read) {
+    this.Title = Title;
+    this.Author = Author;
+    this.Pages = Pages;
+    this.Read = Read;
+  }
 }
 
-document.querySelector(".exit-button").addEventListener("click", function (){
+const exitButton = document.querySelector(".exit-button")
+exitButton.addEventListener("click", function (){
   document.querySelector(".form-popup").style.display = "none";
 })
 
-document.querySelector(".add-book").addEventListener("click", function (){
+const addBookButton = document.querySelector(".add-book")
+addBookButton.addEventListener("click", function (){
   document.querySelector(".form-popup").style.display = "flex";
 })
 
+
+const submitButton = document.querySelector(".submit-button")
+submitButton.addEventListener("click", formData)
 
 function formData() {
   let Title = document.getElementById("Title").value;
   let Author = document.getElementById("Author").value;
   let Pages = document.getElementById("Pages").value;
   let Read = document.getElementById("Read").value;
+  document.querySelector(".form-popup").style.display = "none";
+  addBookToLibrary(Title, Author, Pages, Read);
 }
 
 function addBookToLibrary(Title, Author, Pages, Read) {
- /* const addBooksContainer = document.querySelector("add-books-container")
-  const addBookButton = document.querySelector("add-book");
-  addBookButton.addEventListener("click", function() {
-    const bookForm = document.createElement("form")
-    bookForm.classList.add("book-form")
-    bookForm.appendChild(addBooksContainer)
-    
-  })
-  
-  */
-  
   let book = new Book(Title, Author, Pages, Read);
   myLibrary.push(book);
+  displayBooks();
+  console.log(Title, Author, PAges, Read);
 }
 
 //Display books on cards
@@ -52,18 +52,12 @@ function displayBooks() {
         para.textContent = (`${key}: ${myLibrary[key]}`);
         card.appendChild(para);
       }
+      const removeButton = document.createElement("button")
+      removeButton.textContent = (`Remove`);
+      removeButton.classList.add("remove-button")
+      card.appendChild(removeButton);
     })
 }
-
-addBookToLibrary("aaaaaaaaaaaaaaa", "bccccccccccc", "c", "dffffffffffffffffffff")
-addBookToLibrary("a", "b", "c", "d")
-addBookToLibrary("a", "b", "c", "d")
-addBookToLibrary("a", "b", "c", "d")
-addBookToLibrary("aaaaaaaaaaaaaaa", "bccccccccccc", "c", "dffffffffffffffffffff")
-addBookToLibrary("a", "b", "c", "d")
-
-displayBooks()
-
 
 
 
